@@ -16,6 +16,14 @@
 		9EEAB6922AF9A2990084C683 /* RIBs_TutorialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6912AF9A2990084C683 /* RIBs_TutorialUITestsLaunchTests.swift */; };
 		9EEAB6A22AF9B89B0084C683 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9EEAB6A12AF9B89B0084C683 /* SnapKit */; };
 		9EEAB6A52AF9B8A60084C683 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 9EEAB6A42AF9B8A60084C683 /* RIBs */; };
+		9EEAB6AB2AF9C3E40084C683 /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6A72AF9C3E40084C683 /* LoggedOutRouter.swift */; };
+		9EEAB6AC2AF9C3E40084C683 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6A82AF9C3E40084C683 /* LoggedOutViewController.swift */; };
+		9EEAB6AD2AF9C3E40084C683 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6A92AF9C3E40084C683 /* LoggedOutBuilder.swift */; };
+		9EEAB6AE2AF9C3E40084C683 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6AA2AF9C3E40084C683 /* LoggedOutInteractor.swift */; };
+		9EEAB6B42AF9C76D0084C683 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B02AF9C76D0084C683 /* RootRouter.swift */; };
+		9EEAB6B52AF9C76D0084C683 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */; };
+		9EEAB6B62AF9C76D0084C683 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */; };
+		9EEAB6B72AF9C76D0084C683 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		9EEAB68B2AF9A2990084C683 /* RIBs-TutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RIBs-TutorialUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EEAB68F2AF9A2990084C683 /* RIBs_TutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RIBs_TutorialUITests.swift; sourceTree = "<group>"; };
 		9EEAB6912AF9A2990084C683 /* RIBs_TutorialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RIBs_TutorialUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9EEAB6A72AF9C3E40084C683 /* LoggedOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
+		9EEAB6A82AF9C3E40084C683 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		9EEAB6A92AF9C3E40084C683 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
+		9EEAB6AA2AF9C3E40084C683 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		9EEAB6B02AF9C76D0084C683 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,8 @@
 		9EEAB66D2AF9A2980084C683 /* RIBs-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				9EEAB6AF2AF9C71F0084C683 /* Root */,
+				9EEAB6A62AF9C30F0084C683 /* LoggedOut */,
 				9EEAB69F2AF9A2DF0084C683 /* Resource */,
 				9EEAB69E2AF9A2C40084C683 /* AppStart */,
 				9EEAB67C2AF9A2990084C683 /* Info.plist */,
@@ -139,6 +157,28 @@
 				9EEAB6792AF9A2990084C683 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		9EEAB6A62AF9C30F0084C683 /* LoggedOut */ = {
+			isa = PBXGroup;
+			children = (
+				9EEAB6A72AF9C3E40084C683 /* LoggedOutRouter.swift */,
+				9EEAB6A82AF9C3E40084C683 /* LoggedOutViewController.swift */,
+				9EEAB6A92AF9C3E40084C683 /* LoggedOutBuilder.swift */,
+				9EEAB6AA2AF9C3E40084C683 /* LoggedOutInteractor.swift */,
+			);
+			path = LoggedOut;
+			sourceTree = "<group>";
+		};
+		9EEAB6AF2AF9C71F0084C683 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				9EEAB6B02AF9C76D0084C683 /* RootRouter.swift */,
+				9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */,
+				9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */,
+				9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +320,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EEAB66F2AF9A2980084C683 /* AppDelegate.swift in Sources */,
+				9EEAB6AC2AF9C3E40084C683 /* LoggedOutViewController.swift in Sources */,
+				9EEAB6AD2AF9C3E40084C683 /* LoggedOutBuilder.swift in Sources */,
+				9EEAB6AB2AF9C3E40084C683 /* LoggedOutRouter.swift in Sources */,
+				9EEAB6B72AF9C76D0084C683 /* RootInteractor.swift in Sources */,
+				9EEAB6B42AF9C76D0084C683 /* RootRouter.swift in Sources */,
+				9EEAB6B62AF9C76D0084C683 /* RootBuilder.swift in Sources */,
 				9EEAB6712AF9A2980084C683 /* SceneDelegate.swift in Sources */,
+				9EEAB6B52AF9C76D0084C683 /* RootViewController.swift in Sources */,
+				9EEAB6AE2AF9C3E40084C683 /* LoggedOutInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
