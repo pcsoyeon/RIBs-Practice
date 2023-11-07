@@ -24,6 +24,8 @@
 		9EEAB6B52AF9C76D0084C683 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */; };
 		9EEAB6B62AF9C76D0084C683 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */; };
 		9EEAB6B72AF9C76D0084C683 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */; };
+		9EEAB6B92AF9C9A00084C683 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6B82AF9C9A00084C683 /* RootComponent+LoggedOut.swift */; };
+		9EEAB6BB2AF9CBCD0084C683 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6BA2AF9CBCD0084C683 /* AppComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		9EEAB6B82AF9C9A00084C683 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
+		9EEAB6BA2AF9CBCD0084C683 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 			children = (
 				9EEAB66E2AF9A2980084C683 /* AppDelegate.swift */,
 				9EEAB6702AF9A2980084C683 /* SceneDelegate.swift */,
+				9EEAB6BA2AF9CBCD0084C683 /* AppComponent.swift */,
 			);
 			path = AppStart;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				9EEAB6B12AF9C76D0084C683 /* RootViewController.swift */,
 				9EEAB6B22AF9C76D0084C683 /* RootBuilder.swift */,
 				9EEAB6B32AF9C76D0084C683 /* RootInteractor.swift */,
+				9EEAB6B82AF9C9A00084C683 /* RootComponent+LoggedOut.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -324,10 +330,12 @@
 				9EEAB6AD2AF9C3E40084C683 /* LoggedOutBuilder.swift in Sources */,
 				9EEAB6AB2AF9C3E40084C683 /* LoggedOutRouter.swift in Sources */,
 				9EEAB6B72AF9C76D0084C683 /* RootInteractor.swift in Sources */,
+				9EEAB6BB2AF9CBCD0084C683 /* AppComponent.swift in Sources */,
 				9EEAB6B42AF9C76D0084C683 /* RootRouter.swift in Sources */,
 				9EEAB6B62AF9C76D0084C683 /* RootBuilder.swift in Sources */,
 				9EEAB6712AF9A2980084C683 /* SceneDelegate.swift in Sources */,
 				9EEAB6B52AF9C76D0084C683 /* RootViewController.swift in Sources */,
+				9EEAB6B92AF9C9A00084C683 /* RootComponent+LoggedOut.swift in Sources */,
 				9EEAB6AE2AF9C3E40084C683 /* LoggedOutInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

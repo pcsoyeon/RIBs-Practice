@@ -24,6 +24,15 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
     private var player1Field: UITextField?
     private var player2Field: UITextField?
     
+    // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.white
+        let playerFields = buildPlayerFields()
+        buildLoginButton(withPlayer1Field: playerFields.player1Field, player2Field: playerFields.player2Field)
+    }
+    
     // MARK: - Configure UI
     
     private func buildPlayerFields() -> (player1Field: UITextField, player2Field: UITextField) {

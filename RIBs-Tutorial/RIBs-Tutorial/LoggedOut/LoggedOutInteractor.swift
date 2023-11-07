@@ -24,7 +24,8 @@ protocol LoggedOutListener: AnyObject {
 final class LoggedOutInteractor: 
     PresentableInteractor<LoggedOutPresentable>,
     LoggedOutInteractable,
-    LoggedOutPresentableListener {
+    LoggedOutPresentableListener 
+{
 
     weak var router: LoggedOutRouting?
     weak var listener: LoggedOutListener?
