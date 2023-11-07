@@ -1,13 +1,13 @@
 //
-//  RIBs_TutorialUITestsLaunchTests.swift
-//  RIBs-TutorialUITests
+//  TutorialUITestsLaunchTests.swift
+//  TutorialUITests
 //
-//  Created by 김소연 on 11/7/23.
+//  Created by 김소연 on 11/8/23.
 //
 
 import XCTest
 
-final class RIBs_TutorialUITestsLaunchTests: XCTestCase {
+final class TutorialUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

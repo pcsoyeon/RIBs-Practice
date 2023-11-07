@@ -1,13 +1,13 @@
 //
-//  RIBs_TutorialUITests.swift
-//  RIBs-TutorialUITests
+//  TutorialUITests.swift
+//  TutorialUITests
 //
-//  Created by 김소연 on 11/7/23.
+//  Created by 김소연 on 11/8/23.
 //
 
 import XCTest
 
-final class RIBs_TutorialUITests: XCTestCase {
+final class TutorialUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

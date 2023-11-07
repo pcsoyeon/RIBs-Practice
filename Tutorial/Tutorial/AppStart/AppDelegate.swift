@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RIBs-Tutorial
+//  Tutorial
 //
-//  Created by 김소연 on 11/7/23.
+//  Created by 김소연 on 11/8/23.
 //
 
 import UIKit
