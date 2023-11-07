@@ -22,6 +22,11 @@
 		9EEAB6F22AFA32920084C683 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6EE2AFA32920084C683 /* RootViewController.swift */; };
 		9EEAB6F32AFA32920084C683 /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6EF2AFA32920084C683 /* RootBuilder.swift */; };
 		9EEAB6F42AFA32920084C683 /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6F02AFA32920084C683 /* RootInteractor.swift */; };
+		9EEAB6FA2AFA33790084C683 /* LoggedOutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6F62AFA33790084C683 /* LoggedOutRouter.swift */; };
+		9EEAB6FB2AFA33790084C683 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6F72AFA33790084C683 /* LoggedOutViewController.swift */; };
+		9EEAB6FC2AFA33790084C683 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6F82AFA33790084C683 /* LoggedOutBuilder.swift */; };
+		9EEAB6FD2AFA33790084C683 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6F92AFA33790084C683 /* LoggedOutInteractor.swift */; };
+		9EEAB6FF2AFA36F70084C683 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEAB6FE2AFA36F70084C683 /* RootComponent+LoggedOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		9EEAB6EE2AFA32920084C683 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9EEAB6EF2AFA32920084C683 /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
 		9EEAB6F02AFA32920084C683 /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		9EEAB6F62AFA33790084C683 /* LoggedOutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutRouter.swift; sourceTree = "<group>"; };
+		9EEAB6F72AFA33790084C683 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		9EEAB6F82AFA33790084C683 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
+		9EEAB6F92AFA33790084C683 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		9EEAB6FE2AFA36F70084C683 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,7 @@
 		9EEAB66D2AF9A2980084C683 /* RIBs-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				9EEAB6F52AFA33650084C683 /* LoggedOut */,
 				9EEAB6EC2AFA32890084C683 /* Root */,
 				9EEAB69F2AF9A2DF0084C683 /* Resource */,
 				9EEAB69E2AF9A2C40084C683 /* AppStart */,
@@ -162,8 +173,20 @@
 				9EEAB6EE2AFA32920084C683 /* RootViewController.swift */,
 				9EEAB6EF2AFA32920084C683 /* RootBuilder.swift */,
 				9EEAB6F02AFA32920084C683 /* RootInteractor.swift */,
+				9EEAB6FE2AFA36F70084C683 /* RootComponent+LoggedOut.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		9EEAB6F52AFA33650084C683 /* LoggedOut */ = {
+			isa = PBXGroup;
+			children = (
+				9EEAB6F62AFA33790084C683 /* LoggedOutRouter.swift */,
+				9EEAB6F72AFA33790084C683 /* LoggedOutViewController.swift */,
+				9EEAB6F82AFA33790084C683 /* LoggedOutBuilder.swift */,
+				9EEAB6F92AFA33790084C683 /* LoggedOutInteractor.swift */,
+			);
+			path = LoggedOut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,12 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EEAB6FD2AFA33790084C683 /* LoggedOutInteractor.swift in Sources */,
 				9EEAB6F22AFA32920084C683 /* RootViewController.swift in Sources */,
 				9EEAB6F12AFA32920084C683 /* RootRouter.swift in Sources */,
+				9EEAB6FC2AFA33790084C683 /* LoggedOutBuilder.swift in Sources */,
+				9EEAB6FF2AFA36F70084C683 /* RootComponent+LoggedOut.swift in Sources */,
 				9EEAB6F42AFA32920084C683 /* RootInteractor.swift in Sources */,
+				9EEAB6FA2AFA33790084C683 /* LoggedOutRouter.swift in Sources */,
 				9EEAB66F2AF9A2980084C683 /* AppDelegate.swift in Sources */,
 				9EEAB6BB2AF9CBCD0084C683 /* AppComponent.swift in Sources */,
 				9EEAB6712AF9A2980084C683 /* SceneDelegate.swift in Sources */,
+				9EEAB6FB2AFA33790084C683 /* LoggedOutViewController.swift in Sources */,
 				9EEAB6F32AFA32920084C683 /* RootBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

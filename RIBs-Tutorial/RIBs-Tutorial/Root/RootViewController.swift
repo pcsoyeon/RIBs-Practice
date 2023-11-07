@@ -18,4 +18,22 @@ protocol RootPresentableListener: AnyObject {
 final class RootViewController: UIViewController, RootPresentable, RootViewControllable {
 
     weak var listener: RootPresentableListener?
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    // MARK: - RootViewControllable
+    
+    func present(viewController: ViewControllable) {
+        present(viewController.uiviewController, animated: true)
+    }
 }
