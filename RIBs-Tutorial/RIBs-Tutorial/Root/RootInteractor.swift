@@ -42,4 +42,11 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    // MARK: - LoggedOut
+    
+    func didLogin(player1Name: String, player2Name: String) {
+        print("\(player1Name) vs \(player2Name)")
+    }
+    
 }
