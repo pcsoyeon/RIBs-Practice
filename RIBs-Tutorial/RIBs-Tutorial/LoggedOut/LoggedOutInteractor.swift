@@ -18,7 +18,13 @@ protocol LoggedOutPresentable: Presentable {
 }
 
 protocol LoggedOutListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    /*
+     LoggedOutRIB -> RootRIB 소통
+     - RootRIB이 LoggedOutRIB의 상위 RIB이므로
+     - RootRouter는 LoggedOutInteractor의 Listener
+     - 이 Listener를 통해 로그인 이벤트를 LoggedOutRIB -> RootRIB으로 전달
+    */
+    func didLogin(withPlayer1Name player1Name: String, player2Name: String)
 }
 
 final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, LoggedOutInteractable, LoggedOutPresentableListener {
@@ -47,7 +53,10 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
         let player1NameWithDefault = playerName(player1Name, withDefaultName: "Player 1")
         let player2NameWithDefault = playerName(player2Name, withDefaultName: "Player 2")
         
-        print("\(player1NameWithDefault) vs \(player2NameWithDefault)")
+        // LoggedOutListener 작성 후
+        // 리스너를 만들었으니, LoggedOutRIB에서 login 액션이 발동했을 때 리스너를 호출함으로써 상위 RIB에게 알려줍니다.
+        // LoggedOutRIB 리스너는 사용자가 'Login' 버튼을 탭하면 호출됩니다. 
+        listener?.didLogin(withPlayer1Name: player1NameWithDefault, player2Name: player2NameWithDefault)
     }
     
     private func playerName(_ name: String?, withDefaultName defaultName: String) -> String {

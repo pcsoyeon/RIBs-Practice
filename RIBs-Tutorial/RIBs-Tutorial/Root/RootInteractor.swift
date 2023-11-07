@@ -9,7 +9,9 @@ import RIBs
 import RxSwift
 
 protocol RootRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    // RootRIB -> LoggedIn으로 화면전환
+    // 이 코드를 통해 RootInteractor와 RootRouter간의 계약 성립
+    func routeToLoggedIn(withPlayer1Name player1Name: String, player2Name: String)
 }
 
 protocol RootPresentable: Presentable {
@@ -42,4 +44,9 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func didLogin(withPlayer1Name player1Name: String, player2Name: String) {
+        router?.routeToLoggedIn(withPlayer1Name: player1Name, player2Name: player2Name)
+    }
+    
 }

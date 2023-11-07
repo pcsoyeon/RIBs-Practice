@@ -41,4 +41,8 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
 
     private var loggedOut: ViewableRouting?
     
+    func routeToLoggedIn(withPlayer1Name player1Name: String, player2Name: String) {
+        
+    }
+    
 }
