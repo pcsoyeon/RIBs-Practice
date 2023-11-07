@@ -28,4 +28,8 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
         present(viewController.uiviewController, animated: true)
     }
     
+    func dismiess(viewController: ViewControllable) {
+        dismiss(animated: true)
+    }
+    
 }
