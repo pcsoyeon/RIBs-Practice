@@ -44,7 +44,6 @@ final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteract
     }
     
     func didLogin(player1Name: String, player2Name: String) {
-        print("player1Name: \(player1Name)", "player2Name: \(player2Name)")
         router?.routeToLoggedIn(withPlayer1Name: player1Name, player2Name: player2Name)
     }
     
