@@ -14,6 +14,9 @@ protocol LoggedInDependency: Dependency {
     // created by this RIB.
 }
 
+/*
+ OffGameBuilder의 계약된 종속성을 만족하기 위해서 LoggedInComponent 클래스를 OffGameComponent를 준수할 수 있게 수정해야 합니다.
+ */
 final class LoggedInComponent: Component<LoggedInDependency> {
 
     // TODO: Make sure to convert the variable into lower-camelcase.
@@ -40,6 +43,13 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         let component = LoggedInComponent(dependency: dependency)
         let interactor = LoggedInInteractor()
         interactor.listener = listener
-        return LoggedInRouter(interactor: interactor, viewController: component.LoggedInViewController)
+        
+        let offGameBuilder = OffGameBuilder(dependency: component)
+        
+        return LoggedInRouter(
+            interactor: interactor,
+            viewController: component.LoggedInViewController,
+            offGameBuilder: offGameBuilder
+        )
     }
 }

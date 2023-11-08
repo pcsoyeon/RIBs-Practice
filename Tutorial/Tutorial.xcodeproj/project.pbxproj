@@ -30,6 +30,11 @@
 		9EC104222AFB05710045FAD6 /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1041F2AFB05710045FAD6 /* LoggedInBuilder.swift */; };
 		9EC104232AFB05710045FAD6 /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104202AFB05710045FAD6 /* LoggedInInteractor.swift */; };
 		9EC104252AFB05D60045FAD6 /* RootComponent+LoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104242AFB05D60045FAD6 /* RootComponent+LoggedIn.swift */; };
+		9EC1042B2AFB13F20045FAD6 /* OffGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104272AFB13F20045FAD6 /* OffGameRouter.swift */; };
+		9EC1042C2AFB13F20045FAD6 /* OffGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104282AFB13F20045FAD6 /* OffGameViewController.swift */; };
+		9EC1042D2AFB13F20045FAD6 /* OffGameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104292AFB13F20045FAD6 /* OffGameBuilder.swift */; };
+		9EC1042E2AFB13F20045FAD6 /* OffGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1042A2AFB13F20045FAD6 /* OffGameInteractor.swift */; };
+		9EC104302AFB151C0045FAD6 /* LoggedInComponent+OffGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1042F2AFB151C0045FAD6 /* LoggedInComponent+OffGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,11 @@
 		9EC1041F2AFB05710045FAD6 /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		9EC104202AFB05710045FAD6 /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
 		9EC104242AFB05D60045FAD6 /* RootComponent+LoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedIn.swift"; sourceTree = "<group>"; };
+		9EC104272AFB13F20045FAD6 /* OffGameRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffGameRouter.swift; sourceTree = "<group>"; };
+		9EC104282AFB13F20045FAD6 /* OffGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffGameViewController.swift; sourceTree = "<group>"; };
+		9EC104292AFB13F20045FAD6 /* OffGameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffGameBuilder.swift; sourceTree = "<group>"; };
+		9EC1042A2AFB13F20045FAD6 /* OffGameInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffGameInteractor.swift; sourceTree = "<group>"; };
+		9EC1042F2AFB151C0045FAD6 /* LoggedInComponent+OffGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+OffGame.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 		9EC103CE2AFAA0990045FAD6 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				9EC104262AFB13E40045FAD6 /* OffGame */,
 				9EC1041D2AFB055E0045FAD6 /* LoggedIn */,
 				9EC104102AFAA14A0045FAD6 /* LoggedOut */,
 				9EC104072AFAA1330045FAD6 /* Root */,
@@ -203,8 +214,20 @@
 				9EC1041E2AFB05710045FAD6 /* LoggedInRouter.swift */,
 				9EC1041F2AFB05710045FAD6 /* LoggedInBuilder.swift */,
 				9EC104202AFB05710045FAD6 /* LoggedInInteractor.swift */,
+				9EC1042F2AFB151C0045FAD6 /* LoggedInComponent+OffGame.swift */,
 			);
 			path = LoggedIn;
+			sourceTree = "<group>";
+		};
+		9EC104262AFB13E40045FAD6 /* OffGame */ = {
+			isa = PBXGroup;
+			children = (
+				9EC104272AFB13F20045FAD6 /* OffGameRouter.swift */,
+				9EC104282AFB13F20045FAD6 /* OffGameViewController.swift */,
+				9EC104292AFB13F20045FAD6 /* OffGameBuilder.swift */,
+				9EC1042A2AFB13F20045FAD6 /* OffGameInteractor.swift */,
+			);
+			path = OffGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,16 +369,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC104222AFB05710045FAD6 /* LoggedInBuilder.swift in Sources */,
+				9EC1042B2AFB13F20045FAD6 /* OffGameRouter.swift in Sources */,
+				9EC1042E2AFB13F20045FAD6 /* OffGameInteractor.swift in Sources */,
 				9EC1040F2AFAA1400045FAD6 /* RootInteractor.swift in Sources */,
 				9EC104252AFB05D60045FAD6 /* RootComponent+LoggedIn.swift in Sources */,
 				9EC104162AFAA15C0045FAD6 /* LoggedOutViewController.swift in Sources */,
+				9EC1042D2AFB13F20045FAD6 /* OffGameBuilder.swift in Sources */,
 				9EC103D02AFAA0990045FAD6 /* AppDelegate.swift in Sources */,
 				9EC1040C2AFAA1400045FAD6 /* RootRouter.swift in Sources */,
 				9EC1040E2AFAA1400045FAD6 /* RootBuilder.swift in Sources */,
+				9EC1042C2AFB13F20045FAD6 /* OffGameViewController.swift in Sources */,
 				9EC1041C2AFAA37A0045FAD6 /* AppComponent.swift in Sources */,
 				9EC104152AFAA15C0045FAD6 /* LoggedOutRouter.swift in Sources */,
 				9EC1040D2AFAA1400045FAD6 /* RootViewController.swift in Sources */,
 				9EC104182AFAA15C0045FAD6 /* LoggedOutInteractor.swift in Sources */,
+				9EC104302AFB151C0045FAD6 /* LoggedInComponent+OffGame.swift in Sources */,
 				9EC103D22AFAA0990045FAD6 /* SceneDelegate.swift in Sources */,
 				9EC104212AFB05710045FAD6 /* LoggedInRouter.swift in Sources */,
 				9EC1041A2AFAA2F90045FAD6 /* RootComponent+LoggedOut.swift in Sources */,
