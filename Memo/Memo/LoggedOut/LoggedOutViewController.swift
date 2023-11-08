@@ -18,4 +18,19 @@ protocol LoggedOutPresentableListener: AnyObject {
 final class LoggedOutViewController: UIViewController, LoggedOutPresentable, LoggedOutViewControllable {
 
     weak var listener: LoggedOutPresentableListener?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+    }
+    
+    // MARK: - Private
+    
+    private lazy var emailTextField = UITextField()
+    private lazy var passwordTextField = UITextField()
+    
+    private func layout() {
+        
+    }
+    
 }

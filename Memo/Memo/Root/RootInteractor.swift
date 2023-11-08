@@ -8,8 +8,14 @@
 import RIBs
 import RxSwift
 
+/*
+ - LoggedOutRIB을 build 및 attach 하는 책임은 RootRouter에게 있습니다.
+ (Router는 단순히 그 명령을 받아서 attach, detach 담당입니다.)
+ - Router에게 앱이 실행되면 바로 LoggedOutRIB을 연결하라고 명령을 내리기 위해 Interactor로 이동합니다.
+ */
 protocol RootRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func routeToLoggedOut()
 }
 
 protocol RootPresentable: Presentable {
@@ -23,6 +29,7 @@ protocol RootListener: AnyObject {
 
 final class RootInteractor: PresentableInteractor<RootPresentable>, RootInteractable, RootPresentableListener {
 
+    // Interactor는 아래와 같이 router를 갖고 있습니다.
     weak var router: RootRouting?
     weak var listener: RootListener?
 

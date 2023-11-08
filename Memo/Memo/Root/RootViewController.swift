@@ -21,7 +21,13 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        view.backgroundColor = .white
     }
+    
+    func present(viewController: ViewControllable) {
+        present(viewController.uiviewController, animated: true)
+    }
+    
+    // MARK: - Private
     
 }
