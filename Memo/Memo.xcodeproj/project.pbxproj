@@ -17,6 +17,10 @@
 		92B242412AFBD4FD00AB462E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92B242402AFBD4FD00AB462E /* SnapKit */; };
 		92B242442AFBD52700AB462E /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 92B242432AFBD52700AB462E /* RIBs */; };
 		92B2424F2AFBDC0500AB462E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2424E2AFBDC0500AB462E /* AppComponent.swift */; };
+		92B242602AFBE54500AB462E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2425C2AFBE54500AB462E /* RootRouter.swift */; };
+		92B242612AFBE54500AB462E /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2425D2AFBE54500AB462E /* RootViewController.swift */; };
+		92B242622AFBE54500AB462E /* RootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2425E2AFBE54500AB462E /* RootBuilder.swift */; };
+		92B242632AFBE54500AB462E /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2425F2AFBE54500AB462E /* RootInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		92B2422F2AFBD4C000AB462E /* MemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITests.swift; sourceTree = "<group>"; };
 		92B242312AFBD4C000AB462E /* MemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		92B2424E2AFBDC0500AB462E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		92B2425C2AFBE54500AB462E /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		92B2425D2AFBE54500AB462E /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		92B2425E2AFBE54500AB462E /* RootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootBuilder.swift; sourceTree = "<group>"; };
+		92B2425F2AFBE54500AB462E /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		92B2420D2AFBD4BD00AB462E /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				92B2425B2AFBE53600AB462E /* Root */,
 				92B2423E2AFBD4D300AB462E /* AppStart */,
 				92B242172AFBD4C000AB462E /* Assets.xcassets */,
 				92B242192AFBD4C000AB462E /* LaunchScreen.storyboard */,
@@ -134,6 +143,17 @@
 				92B2424E2AFBDC0500AB462E /* AppComponent.swift */,
 			);
 			path = AppStart;
+			sourceTree = "<group>";
+		};
+		92B2425B2AFBE53600AB462E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				92B2425C2AFBE54500AB462E /* RootRouter.swift */,
+				92B2425D2AFBE54500AB462E /* RootViewController.swift */,
+				92B2425E2AFBE54500AB462E /* RootBuilder.swift */,
+				92B2425F2AFBE54500AB462E /* RootInteractor.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B242612AFBE54500AB462E /* RootViewController.swift in Sources */,
+				92B242602AFBE54500AB462E /* RootRouter.swift in Sources */,
+				92B242632AFBE54500AB462E /* RootInteractor.swift in Sources */,
 				92B2420F2AFBD4BD00AB462E /* AppDelegate.swift in Sources */,
 				92B2424F2AFBDC0500AB462E /* AppComponent.swift in Sources */,
 				92B242112AFBD4BD00AB462E /* SceneDelegate.swift in Sources */,
+				92B242622AFBE54500AB462E /* RootBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
