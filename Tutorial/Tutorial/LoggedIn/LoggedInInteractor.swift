@@ -12,6 +12,7 @@ protocol LoggedInRouting: Routing {
     func cleanupViews()
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
     func routeToTicTacToe()
+    func routeToOffGame()
 }
 
 protocol LoggedInListener: AnyObject {
@@ -42,4 +43,9 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
     func attachTicTacToe() {
         router?.routeToTicTacToe()
     }
+    
+    func gameDidEnd() {
+        router?.routeToOffGame()
+    }
+    
 }

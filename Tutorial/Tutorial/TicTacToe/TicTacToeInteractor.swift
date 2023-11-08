@@ -18,7 +18,7 @@ protocol TicTacToePresentable: Presentable {
 }
 
 protocol TicTacToeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func gameDidEnd()
 }
 
 final class TicTacToeInteractor: PresentableInteractor<TicTacToePresentable>, TicTacToeInteractable, TicTacToePresentableListener {
