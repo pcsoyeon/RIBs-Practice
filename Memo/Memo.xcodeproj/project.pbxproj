@@ -123,10 +123,10 @@
 		92B2420D2AFBD4BD00AB462E /* Memo */ = {
 			isa = PBXGroup;
 			children = (
-				9EC1044A2AFC5AF30045FAD6 /* Utils */,
 				9EC1043C2AFC51340045FAD6 /* LoggedOut */,
 				92B2425B2AFBE53600AB462E /* Root */,
 				92B2423E2AFBD4D300AB462E /* AppStart */,
+				9EC1044A2AFC5AF30045FAD6 /* Utils */,
 				92B242172AFBD4C000AB462E /* Assets.xcassets */,
 				92B242192AFBD4C000AB462E /* LaunchScreen.storyboard */,
 				92B2421C2AFBD4C000AB462E /* Info.plist */,
