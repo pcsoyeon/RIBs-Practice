@@ -1,5 +1,5 @@
 //
-//  LoggedInInteractor.swift
+//  MemoInteractor.swift
 //  Memo
 //
 //  Created by 김소연 on 11/9/23.
@@ -8,24 +8,30 @@
 import RIBs
 import RxSwift
 
-protocol LoggedInRouting: Routing {
-    func cleanupViews()
+protocol MemoRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
-    func routeToMemo()
 }
 
-protocol LoggedInListener: AnyObject {
+protocol MemoPresentable: Presentable {
+    var listener: MemoPresentableListener? { get set }
+    // TODO: Declare methods the interactor can invoke the presenter to present data.
+}
+
+protocol MemoListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class LoggedInInteractor: Interactor, LoggedInInteractable {
+final class MemoInteractor: PresentableInteractor<MemoPresentable>, MemoInteractable, MemoPresentableListener {
 
-    weak var router: LoggedInRouting?
-    weak var listener: LoggedInListener?
+    weak var router: MemoRouting?
+    weak var listener: MemoListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init() {}
+    override init(presenter: MemoPresentable) {
+        super.init(presenter: presenter)
+        presenter.listener = self
+    }
 
     override func didBecomeActive() {
         super.didBecomeActive()
@@ -34,8 +40,6 @@ final class LoggedInInteractor: Interactor, LoggedInInteractable {
 
     override func willResignActive() {
         super.willResignActive()
-
-        router?.cleanupViews()
         // TODO: Pause any business logic.
     }
 }

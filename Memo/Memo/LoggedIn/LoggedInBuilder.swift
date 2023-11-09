@@ -65,6 +65,14 @@ final class LoggedInBuilder: Builder<LoggedInDependency>, LoggedInBuildable {
         )
         let interactor = LoggedInInteractor()
         interactor.listener = listener
-        return LoggedInRouter(interactor: interactor, viewController: component.LoggedInViewController)
+        
+        let memoBuilder = MemoBuilder(dependency: component)
+        
+        return LoggedInRouter(
+            interactor: interactor,
+            viewController: component.LoggedInViewController,
+            memoBuilder: memoBuilder
+        )
     }
+    
 }

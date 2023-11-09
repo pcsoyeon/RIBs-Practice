@@ -53,7 +53,8 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         view.addSubview(loginButton)
         
         emailTextField.snp.makeConstraints {
-            $0.top.left.right.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(80)
+            $0.left.right.equalToSuperview().inset(20)
             $0.height.equalTo(48)
         }
         passwordTextField.snp.makeConstraints {

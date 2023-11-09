@@ -7,24 +7,32 @@
 
 import RIBs
 
-protocol LoggedInInteractable: Interactable {
+protocol LoggedInInteractable: Interactable, MemoListener {
     var router: LoggedInRouting? { get set }
     var listener: LoggedInListener? { get set }
 }
 
 protocol LoggedInViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy. Since
-    // this RIB does not own its own view, this protocol is conformed to by one of this
-    // RIB's ancestor RIBs' view.
+    func present(viewController: ViewControllable)
 }
 
 final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
-    init(interactor: LoggedInInteractable, viewController: LoggedInViewControllable) {
+    init(
+        interactor: LoggedInInteractable,
+        viewController: LoggedInViewControllable,
+        memoBuilder: MemoBuildable
+    ) {
         self.viewController = viewController
+        self.memoBuilder = memoBuilder
         super.init(interactor: interactor)
         interactor.router = self
+    }
+    
+    override func didLoad() {
+        super.didLoad()
+        routeToMemo()
     }
 
     func cleanupViews() {
@@ -32,7 +40,17 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
         // it may have added to the view hierarchy, when its interactor is deactivated.
     }
 
+    func routeToMemo() {
+        let memoRouting = memoBuilder.build(withListener: interactor)
+        self.memoRouting = memoRouting
+        attachChild(memoRouting)
+        viewController.present(viewController: memoRouting.viewControllable)
+    }
+    
     // MARK: - Private
 
     private let viewController: LoggedInViewControllable
+    
+    private let memoBuilder: MemoBuildable
+    private var memoRouting: ViewableRouting?
 }
