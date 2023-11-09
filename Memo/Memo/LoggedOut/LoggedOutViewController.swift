@@ -26,7 +26,7 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
         super.viewDidLoad()
         view.backgroundColor = .white
         layout()
-        rxBind()
+//        rxBind()
     }
     
     // MARK: - Private
@@ -66,33 +66,12 @@ final class LoggedOutViewController: UIViewController, LoggedOutPresentable, Log
             $0.left.right.equalToSuperview().inset(20)
             $0.height.equalTo(48)
         }
+        
+        loginButton.addTarget(self, action: #selector(touchUpLoginButton), for: .touchUpInside)
     }
     
-    private func rxBind() {
-        Observable
-            .combineLatest(
-                emailTextField.rx.text.orEmpty,
-                passwordTextField.rx.text.orEmpty
-            ) { email, password -> Bool in
-                return LoginTextInputManager.isValidEmail(email) && LoginTextInputManager.isValidPassword(password)
-            }
-            .subscribe(onNext: { [weak self] isValid in
-                self?.loginButton.isEnabled = isValid
-            })
-            .disposed(by: bag)
-        
-        loginButton
-            .rx
-            .tap
-            .map { [weak self] _ in
-                return (self?.emailTextField.text ?? "", self?.passwordTextField.text ?? "")
-            }
-            .bind(with: self, onNext: { owner, args in
-                // View는 UI를 보여주기만 하는 바보로 만들어야 하기 때문에 모든 로직은 Interactor에서 작성합니다.
-                let (email, password) = args
-                owner.listener?.loginDidTap(email: email, password: password)
-            })
-            .disposed(by: bag)
+    @objc func touchUpLoginButton() {
+        listener?.loginDidTap(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
 }
