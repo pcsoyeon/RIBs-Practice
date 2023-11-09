@@ -38,6 +38,7 @@
 		9EC1045E2AFC6BD10045FAD6 /* MemoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1045A2AFC6BD10045FAD6 /* MemoInteractor.swift */; };
 		9EC104602AFC6DB50045FAD6 /* LoggedInComponent+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1045F2AFC6DB50045FAD6 /* LoggedInComponent+Memo.swift */; };
 		9EC104632AFC70DF0045FAD6 /* MemoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104622AFC70DF0045FAD6 /* MemoListCell.swift */; };
+		9EC104652AFC87EA0045FAD6 /* UINavigationContoller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104642AFC87EA0045FAD6 /* UINavigationContoller+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		9EC1045A2AFC6BD10045FAD6 /* MemoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoInteractor.swift; sourceTree = "<group>"; };
 		9EC1045F2AFC6DB50045FAD6 /* LoggedInComponent+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoggedInComponent+Memo.swift"; sourceTree = "<group>"; };
 		9EC104622AFC70DF0045FAD6 /* MemoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListCell.swift; sourceTree = "<group>"; };
+		9EC104642AFC87EA0045FAD6 /* UINavigationContoller+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationContoller+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		9EC1044A2AFC5AF30045FAD6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9EC104642AFC87EA0045FAD6 /* UINavigationContoller+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				9EC104632AFC70DF0045FAD6 /* MemoListCell.swift in Sources */,
 				9EC104432AFC51440045FAD6 /* LoggedOutBuilder.swift in Sources */,
 				9EC1045D2AFC6BD10045FAD6 /* MemoBuilder.swift in Sources */,
+				9EC104652AFC87EA0045FAD6 /* UINavigationContoller+Extension.swift in Sources */,
 				9EC104522AFC64FD0045FAD6 /* LoggedInBuilder.swift in Sources */,
 				9EC104462AFC522D0045FAD6 /* RootComponent+LoggedOut.swift in Sources */,
 				92B242632AFBE54500AB462E /* RootInteractor.swift in Sources */,

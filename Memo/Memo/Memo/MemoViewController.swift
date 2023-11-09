@@ -14,6 +14,7 @@ protocol MemoPresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
     // business logic, such as signIn(). This protocol is implemented by the corresponding
     // interactor class.
+    func changeMemoTitle(_ title: String)
 }
 
 final class MemoViewController: UIViewController, MemoPresentable, MemoViewControllable {
@@ -23,12 +24,26 @@ final class MemoViewController: UIViewController, MemoPresentable, MemoViewContr
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
+        configureNavigationBar()
         configureTableView()
     }
     
     // MARK: - Private
     
+    // MARK: - Properties
+    
+    private lazy var memoTitleList: [String] = [
+        "RIB",
+        "Router",
+        "Interactor",
+        "Builder"
+    ]
+    
+    // MARK: - Views
+    
     private lazy var memoTableView = UITableView()
+    
+    // MARK: - Helpers
     
     private func layout() {
         view.addSubview(memoTableView)
@@ -40,8 +55,13 @@ final class MemoViewController: UIViewController, MemoPresentable, MemoViewContr
     
     private func configureTableView() {
         memoTableView.rowHeight = UITableView.automaticDimension
+        memoTableView.delegate = self
         memoTableView.dataSource = self
         memoTableView.register(MemoListCell.self, forCellReuseIdentifier: "MemoListCell")
+    }
+    
+    private func configureNavigationBar() {
+        self.navigationItem.title = "Memo"
     }
     
 }
@@ -51,13 +71,21 @@ final class MemoViewController: UIViewController, MemoPresentable, MemoViewContr
 extension MemoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return memoTitleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MemoListCell", for: indexPath) as? MemoListCell else { return UITableViewCell() }
-        cell.fetchData(title: "Title")
+        cell.fetchData(title: memoTitleList[indexPath.row])
         return cell
+    }
+    
+}
+
+extension MemoViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        listener?.changeMemoTitle(memoTitleList[indexPath.row])
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import UIKit
 
 protocol LoggedInInteractable: Interactable, MemoListener {
     var router: LoggedInRouting? { get set }
@@ -44,7 +45,8 @@ final class LoggedInRouter: Router<LoggedInInteractable>, LoggedInRouting {
         let memoRouting = memoBuilder.build(withListener: interactor)
         self.memoRouting = memoRouting
         attachChild(memoRouting)
-        viewController.present(viewController: memoRouting.viewControllable)
+        let navigationController = UINavigationController(root: memoRouting.viewControllable)
+        viewController.present(viewController: navigationController)
     }
     
     // MARK: - Private

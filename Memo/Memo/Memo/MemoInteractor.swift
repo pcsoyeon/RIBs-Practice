@@ -42,4 +42,11 @@ final class MemoInteractor: PresentableInteractor<MemoPresentable>, MemoInteract
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func changeMemoTitle(_ title: String) {
+        print("수정하고 싶은 메모 제목 : \(title)")
+    }
+    
+    // MARK: - Private
+    
 }
