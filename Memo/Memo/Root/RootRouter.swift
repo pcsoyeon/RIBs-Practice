@@ -66,7 +66,11 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
             // 3. nil로
             self.loggedOutRouting = nil
         }
-        let loggedInRouting = loggedInBuilder.build(withListener: interactor)
+        let loggedInRouting = loggedInBuilder.build(
+            withListener: interactor,
+            email: email,
+            password: password
+        )
         attachChild(loggedInRouting)
     }
     
