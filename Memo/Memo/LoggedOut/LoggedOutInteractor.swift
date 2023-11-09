@@ -42,4 +42,11 @@ final class LoggedOutInteractor: PresentableInteractor<LoggedOutPresentable>, Lo
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func loginDidTap(email: String, password: String) {
+        
+    }
+    
+    // MARK: - Private
+    
 }

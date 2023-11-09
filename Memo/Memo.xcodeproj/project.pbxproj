@@ -26,6 +26,8 @@
 		9EC104432AFC51440045FAD6 /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1043F2AFC51440045FAD6 /* LoggedOutBuilder.swift */; };
 		9EC104442AFC51440045FAD6 /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104402AFC51440045FAD6 /* LoggedOutInteractor.swift */; };
 		9EC104462AFC522D0045FAD6 /* RootComponent+LoggedOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC104452AFC522D0045FAD6 /* RootComponent+LoggedOut.swift */; };
+		9EC104492AFC5ABC0045FAD6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9EC104482AFC5ABC0045FAD6 /* RxCocoa */; };
+		9EC1044C2AFC5B010045FAD6 /* LoginTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC1044B2AFC5B010045FAD6 /* LoginTextManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		9EC1043F2AFC51440045FAD6 /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
 		9EC104402AFC51440045FAD6 /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
 		9EC104452AFC522D0045FAD6 /* RootComponent+LoggedOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootComponent+LoggedOut.swift"; sourceTree = "<group>"; };
+		9EC1044B2AFC5B010045FAD6 /* LoginTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC104492AFC5ABC0045FAD6 /* RxCocoa in Frameworks */,
 				92B242442AFBD52700AB462E /* RIBs in Frameworks */,
 				92B242412AFBD4FD00AB462E /* SnapKit in Frameworks */,
 			);
@@ -119,6 +123,7 @@
 		92B2420D2AFBD4BD00AB462E /* Memo */ = {
 			isa = PBXGroup;
 			children = (
+				9EC1044A2AFC5AF30045FAD6 /* Utils */,
 				9EC1043C2AFC51340045FAD6 /* LoggedOut */,
 				92B2425B2AFBE53600AB462E /* Root */,
 				92B2423E2AFBD4D300AB462E /* AppStart */,
@@ -175,8 +180,16 @@
 				9EC1043E2AFC51440045FAD6 /* LoggedOutViewController.swift */,
 				9EC1043F2AFC51440045FAD6 /* LoggedOutBuilder.swift */,
 				9EC104402AFC51440045FAD6 /* LoggedOutInteractor.swift */,
+				9EC1044B2AFC5B010045FAD6 /* LoginTextManager.swift */,
 			);
 			path = LoggedOut;
+			sourceTree = "<group>";
+		};
+		9EC1044A2AFC5AF30045FAD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +211,7 @@
 			packageProductDependencies = (
 				92B242402AFBD4FD00AB462E /* SnapKit */,
 				92B242432AFBD52700AB462E /* RIBs */,
+				9EC104482AFC5ABC0045FAD6 /* RxCocoa */,
 			);
 			productName = Memo;
 			productReference = 92B2420B2AFBD4BD00AB462E /* Memo.app */;
@@ -274,6 +288,7 @@
 			packageReferences = (
 				92B2423F2AFBD4FD00AB462E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				92B242422AFBD52700AB462E /* XCRemoteSwiftPackageReference "RIBs" */,
+				9EC104472AFC5ABC0045FAD6 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 92B2420C2AFBD4BD00AB462E /* Products */;
 			projectDirPath = "";
@@ -329,6 +344,7 @@
 				92B242112AFBD4BD00AB462E /* SceneDelegate.swift in Sources */,
 				9EC104422AFC51440045FAD6 /* LoggedOutViewController.swift in Sources */,
 				92B242622AFBE54500AB462E /* RootBuilder.swift in Sources */,
+				9EC1044C2AFC5B010045FAD6 /* LoginTextManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +699,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		9EC104472AFC5ABC0045FAD6 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -695,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 92B242422AFBD52700AB462E /* XCRemoteSwiftPackageReference "RIBs" */;
 			productName = RIBs;
+		};
+		9EC104482AFC5ABC0045FAD6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EC104472AFC5ABC0045FAD6 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
