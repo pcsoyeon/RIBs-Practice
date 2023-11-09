@@ -37,3 +37,9 @@ final class RootViewController: UIViewController, RootPresentable, RootViewContr
     // MARK: - Private
     
 }
+
+// MARK: - LoggedIn
+
+extension RootViewController: LoggedInViewControllable {
+    
+}
