@@ -22,6 +22,7 @@ final class MainViewController:
     // MARK: - Views
     
     private lazy var imageView = UIImageView()
+    private lazy var showDetailButton = UIButton()
 
     // MARK: - Properties
     
@@ -66,7 +67,13 @@ final class MainViewController:
 extension MainViewController {
     
     private func bindActions() {
-        
+        showDetailButton
+            .rx
+            .tap
+            .throttle(.milliseconds(300), latest: false, scheduler: MainScheduler.instance)
+            .map { MainPresentableAction.didTapDetailButton }
+            .bind(to: self.actionRelay)
+            .disposed(by: disposeBag)
     }
     
 }
@@ -80,6 +87,10 @@ extension MainViewController {
             .map { $0.image }
             .bind(to: self.imageView.rx.image)
             .disposed(by: disposeBag)
+        
+        listener.state
+            .map { $0.showDetailImageView }
+            
     }
     
 }
@@ -92,11 +103,19 @@ extension MainViewController {
         view.backgroundColor = .white
         imageView.backgroundColor = .systemGray6
         
+        showDetailButton.setTitle("Show Detail Image", for: .normal)
+        showDetailButton.setTitleColor(.systemBlue, for: .normal)
+        
         view.addSubview(imageView)
+        view.addSubview(showDetailButton)
         
         imageView.snp.makeConstraints {
             $0.size.equalTo(100)
             $0.center.equalToSuperview()
+        }
+        showDetailButton.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
         }
     }
     

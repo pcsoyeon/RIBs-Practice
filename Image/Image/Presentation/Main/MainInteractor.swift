@@ -12,7 +12,7 @@ import RIBs
 import RxSwift
 
 protocol MainRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachDetailRIB()
 }
 
 protocol MainPresentable: Presentable {
@@ -47,6 +47,7 @@ final class MainInteractor:
     
     enum Mutation {
         case loadImage(UIImage)
+        case attachDetailRIB
     }
     
     // MARK: - Initialize
@@ -79,6 +80,8 @@ extension MainInteractor {
         case .viewWillAppear:
             return repository.showImage()
                 .map { .loadImage($0) }
+        case .didTapDetailButton:
+            return Observable.just(.attachDetailRIB)
         }
     }
     
@@ -93,6 +96,8 @@ extension MainInteractor {
         switch mutation {
         case .loadImage(let image):
             newState.image = image
+        case .attachDetailRIB:
+            router?.attachDetailRIB()
         }
         return newState
     }

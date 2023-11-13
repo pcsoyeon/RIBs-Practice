@@ -14,13 +14,19 @@ import RxSwift
 // MARK: - MainPresentableState
 
 struct MainPresentableState {
+    /// viewWillAppear 이후 화면에 보여질 image
     var image: UIImage?
+    /// button tap
+    var showDetailImageView: Bool = false
 }
 
 // MARK: - MainPresentableAction
 
 enum MainPresentableAction {
+    /// 메인 화면 진입 (viewWillAppear)
     case viewWillAppear
+    /// 상세 화면 버튼
+    case didTapDetailButton
 }
 
 // MARK: - MainPresentableListener
