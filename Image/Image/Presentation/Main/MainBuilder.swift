@@ -20,7 +20,7 @@ final class MainComponent: Component<MainDependency> {
 // MARK: - Builder
 
 protocol MainBuildable: Buildable {
-    func build(withListener listener: MainListener) -> MainRouting
+    func build() -> LaunchRouting
 }
 
 final class MainBuilder: Builder<MainDependency>, MainBuildable {
@@ -29,11 +29,19 @@ final class MainBuilder: Builder<MainDependency>, MainBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: MainListener) -> MainRouting {
+    func build() -> LaunchRouting {
         let component = MainComponent(dependency: dependency)
         let viewController = MainViewController()
-        let interactor = MainInteractor(presenter: viewController)
-        interactor.listener = listener
-        return MainRouter(interactor: interactor, viewController: viewController)
+        let interactor = MainInteractor(
+            presenter: viewController,
+            initialState: .init()
+        )
+//        interactor.listener = listener
+        
+        return LaunchRouter(
+            interactor: interactor,
+            viewController: viewController
+        )
     }
+    
 }

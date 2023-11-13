@@ -5,17 +5,51 @@
 //  Created by 김소연 on 11/13/23.
 //
 
-import RIBs
-import RxSwift
 import UIKit
 
-protocol MainPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+import ReactorKit
+import RIBs
+import RxSwift
+import SnapKit
+
+final class MainViewController:
+    UIViewController,
+    MainPresentable,
+    MainViewControllable
+{
+    
+    // MARK: - Views
+    
+    private lazy var imageView = UIImageView()
+
+    // MARK: - Properties
+    
+    weak var listener: MainPresentableListener?
+    
+    // MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureUI()
+    }
+    
 }
 
-final class MainViewController: UIViewController, MainPresentable, MainViewControllable {
+// MARK: - ConfigureUI
 
-    weak var listener: MainPresentableListener?
+extension MainViewController {
+    
+    private func configureUI() {
+        view.backgroundColor = .white
+        imageView.backgroundColor = .systemGray6
+        
+        view.addSubview(imageView)
+        
+        imageView.snp.makeConstraints {
+            $0.size.equalTo(100)
+            $0.center.equalToSuperview()
+        }
+    }
+    
 }
