@@ -13,4 +13,14 @@ final class AppComponent: Component<EmptyComponent>, MainDependency {
         super.init(dependency: EmptyComponent())
     }
     
+    var mainBuilder: MainBuildable {
+        MainBuilder {
+            MainComponent(dependency: self)
+        }
+    }
+    
+    var mainRepository: MainRepository {
+        MainRepositoryImpl()
+    }
+    
 }

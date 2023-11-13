@@ -8,13 +8,15 @@
 import RIBs
 
 protocol MainDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var mainRepository: MainRepository { get }
 }
 
 final class MainComponent: Component<MainDependency> {
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    fileprivate var initiailState: MainPresentableState {
+        MainPresentableState()
+    }
+    
 }
 
 // MARK: - Builder
@@ -23,20 +25,18 @@ protocol MainBuildable: Buildable {
     func build() -> LaunchRouting
 }
 
-final class MainBuilder: Builder<MainDependency>, MainBuildable {
+final class MainBuilder: 
+    SimpleComponentizedBuilder<MainComponent, LaunchRouting>,
+    MainBuildable
+{
 
-    override init(dependency: MainDependency) {
-        super.init(dependency: dependency)
-    }
-
-    func build() -> LaunchRouting {
-        let component = MainComponent(dependency: dependency)
+    override func build(with component: MainComponent) -> LaunchRouting {
         let viewController = MainViewController()
         let interactor = MainInteractor(
             presenter: viewController,
-            initialState: .init()
+            initialState: component.initiailState,
+            repository: component.dependency.mainRepository
         )
-//        interactor.listener = listener
         
         return LaunchRouter(
             interactor: interactor,

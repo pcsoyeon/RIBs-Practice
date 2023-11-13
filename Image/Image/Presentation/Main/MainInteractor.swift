@@ -30,48 +30,71 @@ final class MainInteractor:
     MainPresentableListener,
     Reactor
 {
-
+    
     // MARK: - Properties
     
     weak var router: MainRouting?
     weak var listener: MainListener?
     
+    private var repository: MainRepository
+    
     // MARK: - Main Reactor
-
+    
     typealias Action = MainPresentableAction
     typealias State = MainPresentableState
     
     var initialState: MainPresentableState
     
     enum Mutation {
-        case loadImage
+        case loadImage(UIImage)
     }
     
     // MARK: - Initialize
     
     init(
         presenter: MainPresentable,
-        initialState: MainPresentableState
+        initialState: MainPresentableState,
+        repository: MainRepository
     ) {
         self.initialState = initialState
+        self.repository = repository
         super.init(presenter: presenter)
         presenter.listener = self
     }
-
+    
     // MARK: - MainPresentableListener
     
     func sendAction(_ action: Action) {
+        self.action.on(.next(action))
+    }
+    
+}
+
+// MARK: - mutate
+
+extension MainInteractor {
+    
+    func mutate(action: MainPresentableAction) -> Observable<Mutation> {
         switch action {
         case .viewWillAppear:
-            print("View Will Appear")
+            return repository.showImage()
+                .map { .loadImage($0) }
         }
     }
     
 }
 
-// MARK: - Load Image
+// MARK: - reduce
 
 extension MainInteractor {
     
+    func reduce(state: MainPresentableState, mutation: Mutation) -> MainPresentableState {
+        var newState = state
+        switch mutation {
+        case .loadImage(let image):
+            newState.image = image
+        }
+        return newState
+    }
     
 }
