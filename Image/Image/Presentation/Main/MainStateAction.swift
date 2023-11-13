@@ -11,14 +11,25 @@ import ReactorKit
 import RIBs
 import RxSwift
 
-protocol MainPresentableListener: AnyObject {
-    func loadImage() -> Observable<UIImage>
-}
+// MARK: - MainPresentableState
 
-struct MainState {
+struct MainPresentableState {
     var image: UIImage?
 }
 
-enum MainAction {
-    case loadImage
+// MARK: - MainPresentableAction
+
+enum MainPresentableAction {
+    case viewWillAppear
+}
+
+// MARK: - MainPresentableListener
+
+protocol MainPresentableListener: AnyObject {
+    typealias Action = MainPresentableAction
+    typealias State = MainPresentableState
+    
+    func sendAction(_ action: Action)
+    var state: Observable<State> { get }
+    var currentState: State { get }
 }

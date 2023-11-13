@@ -38,16 +38,20 @@ final class MainInteractor:
     
     // MARK: - Main Reactor
 
-    typealias Action = MainAction
-    typealias State = MainState
+    typealias Action = MainPresentableAction
+    typealias State = MainPresentableState
     
-    var initialState: MainState
+    var initialState: MainPresentableState
+    
+    enum Mutation {
+        case loadImage
+    }
     
     // MARK: - Initialize
     
     init(
         presenter: MainPresentable,
-        initialState: MainState
+        initialState: MainPresentableState
     ) {
         self.initialState = initialState
         super.init(presenter: presenter)
@@ -56,8 +60,18 @@ final class MainInteractor:
 
     // MARK: - MainPresentableListener
     
-    func loadImage() -> Observable<UIImage> {
-        return .just(.checkmark)
+    func sendAction(_ action: Action) {
+        switch action {
+        case .viewWillAppear:
+            print("View Will Appear")
+        }
     }
+    
+}
+
+// MARK: - Load Image
+
+extension MainInteractor {
+    
     
 }

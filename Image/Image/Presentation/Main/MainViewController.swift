@@ -28,6 +28,11 @@ final class MainViewController:
     
     // MARK: - Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listener?.sendAction(.viewWillAppear)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
