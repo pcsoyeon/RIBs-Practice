@@ -11,7 +11,7 @@ protocol MainDependency: Dependency {
     var mainRepository: MainRepository { get }
 }
 
-final class MainComponent: Component<MainDependency> {
+final class MainComponent: Component<MainDependency>, DetailDependency {
 
     fileprivate var initiailState: MainPresentableState {
         MainPresentableState()
@@ -38,9 +38,12 @@ final class MainBuilder:
             repository: component.dependency.mainRepository
         )
         
-        return LaunchRouter(
+        let detailBuilder = DetailBuilder(dependency: component)
+        
+        return MainRouter(
             interactor: interactor,
-            viewController: viewController
+            viewController: viewController,
+            detailBuilder: detailBuilder
         )
     }
     

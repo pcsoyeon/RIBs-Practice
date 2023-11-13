@@ -7,29 +7,41 @@
 
 import RIBs
 
-protocol MainInteractable: Interactable {
+protocol MainInteractable: Interactable, DetailListener {
     var router: MainRouting? { get set }
     var listener: MainListener? { get set }
 }
 
 protocol MainViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+    func present(viewController: ViewControllable)
 }
 
 final class MainRouter: 
-    ViewableRouter<MainInteractable,
+    LaunchRouter<MainInteractable,
     MainViewControllable>,
     MainRouting
 {
     
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: MainInteractable, viewController: MainViewControllable) {
+    // MARK: - Properties
+    
+    private let detailBuilder: DetailBuildable
+    private var detailRouter: DetailRouting?
+    
+    init(
+        interactor: MainInteractable, 
+        viewController: MainViewControllable,
+        detailBuilder: DetailBuildable
+    ) {
+        self.detailBuilder = detailBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
     
     func attachDetailRIB() {
-        print("RIB ATTACH")
+        let detailRouter = detailBuilder.build(withListener: interactor)
+        self.detailRouter = detailRouter
+        attachChild(detailRouter)
+        viewController.present(viewController: detailRouter.viewControllable)
     }
     
 }

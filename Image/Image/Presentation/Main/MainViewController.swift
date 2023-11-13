@@ -62,6 +62,16 @@ final class MainViewController:
     
 }
 
+// MARK: - MainViewControllable
+
+extension MainViewController {
+    
+    func present(viewController: ViewControllable) {
+        self.present(viewController.uiviewController, animated: true)
+    }
+    
+}
+
 // MARK: - Binding Actions
 
 extension MainViewController {
@@ -87,10 +97,6 @@ extension MainViewController {
             .map { $0.image }
             .bind(to: self.imageView.rx.image)
             .disposed(by: disposeBag)
-        
-        listener.state
-            .map { $0.showDetailImageView }
-            
     }
     
 }

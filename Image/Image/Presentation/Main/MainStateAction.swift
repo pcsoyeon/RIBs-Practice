@@ -16,8 +16,6 @@ import RxSwift
 struct MainPresentableState {
     /// viewWillAppear 이후 화면에 보여질 image
     var image: UIImage?
-    /// button tap
-    var showDetailImageView: Bool = false
 }
 
 // MARK: - MainPresentableAction

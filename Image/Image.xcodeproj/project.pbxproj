@@ -25,6 +25,10 @@
 		9E5B30462B01B84D0087990E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B30452B01B84D0087990E /* AppComponent.swift */; };
 		9E5B30552B01D6AD0087990E /* MainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B30542B01D6AD0087990E /* MainRepository.swift */; };
 		9E5B30582B01D97D0087990E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9E5B30572B01D97D0087990E /* RxCocoa */; };
+		9E5B305F2B01E1F30087990E /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B305B2B01E1F30087990E /* DetailRouter.swift */; };
+		9E5B30602B01E1F30087990E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B305C2B01E1F30087990E /* DetailViewController.swift */; };
+		9E5B30612B01E1F30087990E /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B305D2B01E1F30087990E /* DetailBuilder.swift */; };
+		9E5B30622B01E1F30087990E /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5B305E2B01E1F30087990E /* DetailInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		9E5B30432B01B5FD0087990E /* MainStateAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStateAction.swift; sourceTree = "<group>"; };
 		9E5B30452B01B84D0087990E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		9E5B30542B01D6AD0087990E /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
+		9E5B305B2B01E1F30087990E /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		9E5B305C2B01E1F30087990E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9E5B305D2B01E1F30087990E /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		9E5B305E2B01E1F30087990E /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 		9E5B30302B01B39E0087990E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9E5B305A2B01E1EC0087990E /* Detail */,
 				9E5B303A2B01B4790087990E /* Main */,
 			);
 			path = Presentation;
@@ -188,6 +197,17 @@
 				9E5B30542B01D6AD0087990E /* MainRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		9E5B305A2B01E1EC0087990E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9E5B305B2B01E1F30087990E /* DetailRouter.swift */,
+				9E5B305C2B01E1F30087990E /* DetailViewController.swift */,
+				9E5B305D2B01E1F30087990E /* DetailBuilder.swift */,
+				9E5B305E2B01E1F30087990E /* DetailInteractor.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,12 +352,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5B30602B01E1F30087990E /* DetailViewController.swift in Sources */,
 				9E5B30442B01B5FD0087990E /* MainStateAction.swift in Sources */,
 				9E5B30462B01B84D0087990E /* AppComponent.swift in Sources */,
 				9E5B2FFF2B01B33B0087990E /* AppDelegate.swift in Sources */,
 				9E5B30012B01B33B0087990E /* SceneDelegate.swift in Sources */,
 				9E5B303F2B01B4880087990E /* MainRouter.swift in Sources */,
+				9E5B305F2B01E1F30087990E /* DetailRouter.swift in Sources */,
 				9E5B30402B01B4880087990E /* MainViewController.swift in Sources */,
+				9E5B30622B01E1F30087990E /* DetailInteractor.swift in Sources */,
+				9E5B30612B01E1F30087990E /* DetailBuilder.swift in Sources */,
 				9E5B30552B01D6AD0087990E /* MainRepository.swift in Sources */,
 				9E5B30412B01B4880087990E /* MainBuilder.swift in Sources */,
 				9E5B30422B01B4880087990E /* MainInteractor.swift in Sources */,
